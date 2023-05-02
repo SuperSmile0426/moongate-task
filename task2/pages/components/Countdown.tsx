@@ -54,13 +54,26 @@ const Countdown: React.FC<CountdownProps> = ({ initialDateTime }) => {
 
   return (
     <div className="flex flex-col p-12">
-      <input type="datetime-local" onChange={handleInputChange} />
-      <button onClick={handleStartClick}>Start</button>
-      <div>
-        {remainingTime.days > 0 && <span>{remainingTime.days}d </span>}
-        <span>{formatNumber(remainingTime.hours)}h </span>
-        <span>{formatNumber(remainingTime.minutes)}m </span>
-        <span>{formatNumber(remainingTime.seconds)}s</span>
+      <input 
+        type="datetime-local" 
+        onChange={handleInputChange} 
+        className="bg-gray-200 rounded-lg px-3 py-2"
+      />
+      <button 
+        onClick={handleStartClick}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+      >
+        Start
+      </button>
+      <div className="my-4">
+        {remainingTime.days > 0 && (
+          <span className="mr-2 font-bold">
+            {remainingTime.days}d
+          </span>
+        )}
+        <span className="mr-2 font-bold">{formatNumber(remainingTime.hours)}h</span>
+        <span className="mr-2 font-bold">{formatNumber(remainingTime.minutes)}m</span>
+        <span className="font-bold">{formatNumber(remainingTime.seconds)}s</span>
       </div>
     </div>
   );
