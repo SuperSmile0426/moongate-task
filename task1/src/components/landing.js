@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useState } from "react";
 import {
   AiOutlineQuestionCircle,
   AiOutlineHome,
@@ -9,6 +9,13 @@ import { MdMenu, MdHome } from "react-icons/md";
 import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 function Landing(props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const onMenuClick = () => {
+    if (isOpen) {
+      document.getElementById("nav").classList.remove("hidden");
+    } else document.getElementById("nav").classList.add("hidden");
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="flex flex-col">
       <div className="bg-blue-500">
@@ -18,7 +25,7 @@ function Landing(props) {
           </div>
 
           <button
-            onclick="onMenuClick()"
+            onClick={onMenuClick}
             class="bg-blue-500 text-black py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
           >
             <MdMenu className="w-8 h-auto" />
