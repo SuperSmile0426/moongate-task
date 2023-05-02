@@ -1,23 +1,54 @@
+import { Icon } from "@iconify/react";
 import React from "react";
+import {
+  AiOutlineQuestionCircle,
+  AiOutlineHome,
+  AiOutlineMail,
+} from "react-icons/ai";
+import { MdMenu, MdHome } from "react-icons/md";
+import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 function Landing(props) {
   return (
     <div className="flex flex-col">
       <div className="bg-blue-500">
-        <div>
-          <div id="logo">My Logo</div>
+        <div class="flex justify-between items-center">
+          <div id="logo" class="text-lg font-bold">
+            My Logo
+          </div>
 
-          <button onclick="onMenuClick()">
-            <i className="material-icons">menu</i>
+          <button
+            onclick="onMenuClick()"
+            class="bg-blue-500 text-black py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+          >
+            <MdMenu className="w-8 h-auto" />
           </button>
         </div>
       </div>
 
       <div className="flex flex-col mobile:flex-row">
         <nav id="nav" className="bg-yellow-500 w-full mobile:w-96">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a
+            href="#"
+            class="flex items-center justify-center text-black bg-yellow-500 hover:bg-blue-500 transition-colors duration-300 h-10"
+          >
+            <AiOutlineHome className="mr-2" />
+            Home
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-center text-black bg-yellow-500 hover:bg-blue-500 transition-colors duration-300 h-10"
+          >
+            <AiOutlineQuestionCircle className="mr-2" />
+            About
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-center text-black bg-yellow-500 hover:bg-blue-500 transition-colors duration-300 h-10"
+          >
+            <AiOutlineMail className="mr-2" />
+            Contact
+          </a>
         </nav>
 
         <div className="bg-green-500 w-full">
@@ -64,9 +95,24 @@ function Landing(props) {
       <div className="bg-red-500">
         <div>
           <nav>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
+            <button
+              onclick="onMenuClick()"
+              class="bg-purple-700 m-4 text-white py-2 px-2 rounded hover:bg-slate-600 focus:outline-none focus:shadow-outline"
+            >
+              <FaFacebookF className="w-8 h-auto" />
+            </button>
+            <button
+              onclick="onMenuClick()"
+              class="bg-purple-700 m-4 text-white py-2 px-2 rounded hover:bg-slate-600 focus:outline-none focus:shadow-outline"
+            >
+              <FaTwitter className="w-8 h-auto" />
+            </button>
+            <button
+              onclick="onMenuClick()"
+              class="bg-purple-700 m-4 text-white py-2 px-2 rounded hover:bg-slate-600 focus:outline-none focus:shadow-outline"
+            >
+              <FaInstagram className="w-8 h-auto" />
+            </button>
           </nav>
           <div>&copy; 2023 My Company</div>
         </div>
