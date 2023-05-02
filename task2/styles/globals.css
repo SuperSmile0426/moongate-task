@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  background-color: rgb(35, 149, 255);
+}
+
+body {
+  background-image: linear-gradient(to bottom right, rgb(130, 195, 255), rgb(239, 83, 80));
+  height: 100vh;
+}
